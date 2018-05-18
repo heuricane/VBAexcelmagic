@@ -1,0 +1,16 @@
+﻿' get the blank cells in the column
+Dim rg As Range
+Set rg = Sheet1.Columns(1).SpecialCells(xlCellTypeBlanks)
+
+Dim arr As Variant, cell As Variant, blankcells As String
+
+blankcells = "A1" & "," & rg.Address
+' Put all the blank cells in an array so we can read through it
+arr = Split(blankcells, ",")
+
+For Each cell In arr
+    ' Get the current region of the cell after the blank cell
+    Set rgcurr = Sheet1.Range(cell).Offset(1).CurrentRegion
+    ' Print the range to the Immediate Window
+    Debug.Print rgcurr.Address
+Next cell
