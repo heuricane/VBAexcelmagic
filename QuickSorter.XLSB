@@ -1,4 +1,3 @@
-﻿' By Paul Kelly at excelmacromastery.com
  ' get the blank cells in the column
 Dim rg As Range
 Set rg = Sheet1.Columns(1).SpecialCells(xlCellTypeBlanks)
